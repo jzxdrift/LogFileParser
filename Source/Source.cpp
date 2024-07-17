@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 #endif
 
 	if(argc == 1)
-		openFile("log");
+		openFile("log.txt");
 	else if(argc > 1)
 		openFile(argv[1]);
 }
