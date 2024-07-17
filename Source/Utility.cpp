@@ -7,8 +7,8 @@
 #include <utility>
 #include <algorithm>
 
-#include "Utility.h"
-#include "HTTP_Request.h"
+#include "../Headers/Utility.h"
+#include "../Headers/HTTP_Request.h"
 
 void openFile(const char argv[])
 {
