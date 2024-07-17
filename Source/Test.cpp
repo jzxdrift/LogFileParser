@@ -2,8 +2,8 @@
 #include <string>
 #include <cassert>
 
-#include "HTTP_Request.h"
-#include "Utility.h"
+#include "../Headers/HTTP_Request.h"
+#include "../Headers/Utility.h"
 
 void testProcessInput()
 {
