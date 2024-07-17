@@ -1,5 +1,5 @@
-#include "Utility.h"
-#include "Test.h"
+#include "../Headers/Utility.h"
+#include "../Headers/Test.h"
 
 #define DEBUG 0
 
