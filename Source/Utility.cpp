@@ -24,6 +24,7 @@ void openFile(const char argv[])
 		std::cerr << "Error opening file" << std::endl;
 
 	//pause before terminating
+	std::cout << "Press Enter to continue..." << std::endl;
 	std::cin.get();
 }
 
