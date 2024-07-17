@@ -1,0 +1,16 @@
+#ifndef UTILITY_H
+#define UTILITY_H
+
+#include <fstream>
+#include <string>
+#include <vector>
+
+#include "HTTP_Request.h"
+
+void openFile(const char []);
+void processFile(std::ifstream&);
+void processInput(std::string&, HTTP_Request&);
+void showAccessPerHost(const std::vector<HTTP_Request>&);
+void showAccessSuccess(const std::vector<HTTP_Request>&);
+
+#endif
