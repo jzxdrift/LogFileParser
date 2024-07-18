@@ -24,12 +24,12 @@ const std::string& HTTP_Request::getRequestName() const
 	return m_requestName;
 }
 
-uint32_t HTTP_Request::getReturnCode() const
+std::uint32_t HTTP_Request::getReturnCode() const
 {
 	return m_returnCode;
 }
 
-uint32_t HTTP_Request::getReturnSize() const
+std::uint32_t HTTP_Request::getReturnSize() const
 {
 	return m_returnSize;
 }
@@ -69,12 +69,12 @@ void HTTP_Request::setRequestName(const std::string& requestName)
 	m_requestName = requestName;
 }
 
-void HTTP_Request::setReturnCode(uint32_t returnCode)
+void HTTP_Request::setReturnCode(std::uint32_t returnCode)
 {
 	m_returnCode = returnCode;
 }
 
-void HTTP_Request::setReturnSize(uint32_t returnSize)
+void HTTP_Request::setReturnSize(std::uint32_t returnSize)
 {
 	m_returnSize = returnSize;
 }
