@@ -12,8 +12,8 @@ class HTTP_Request
 		const std::string& getHostName() const;
 		const std::string& getTimeStamp() const;
 		const std::string& getRequestName() const;
-		uint32_t getReturnCode() const;
-		uint32_t getReturnSize() const;
+		std::uint32_t getReturnCode() const;
+		std::uint32_t getReturnSize() const;
 
 		std::string getRequestType() const;
 		std::string getRequestURI() const;
@@ -21,8 +21,8 @@ class HTTP_Request
 		void setHostName(const std::string&);
 		void setTimeStamp(const std::string&);
 		void setRequestName(const std::string&);
-		void setReturnCode(uint32_t);
-		void setReturnSize(uint32_t);
+		void setReturnCode(std::uint32_t);
+		void setReturnSize(std::uint32_t);
 
 		bool operator==(const HTTP_Request&) const;
 
@@ -30,8 +30,8 @@ class HTTP_Request
 		std::string m_hostName;
 		std::string m_timeStamp;
 		std::string m_requestName;
-		uint32_t m_returnCode;
-		uint32_t m_returnSize;
+		std::uint32_t m_returnCode;
+		std::uint32_t m_returnSize;
 };
 
 #endif
