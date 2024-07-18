@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <cstddef>
 #include <sstream>
 #include <cstdint>
 #include <utility>
@@ -54,8 +55,8 @@ void processFile(std::ifstream& ifs)
 void processInput(std::string& input, HTTP_Request& request)
 {
 	//extract request name from original input string and omit quotation marks
-	size_t startDelim = input.find('\"');
-	size_t endDelim = input.find_last_of('\"');
+	std::size_t startDelim = input.find('\"');
+	std::size_t endDelim = input.find_last_of('\"');
 	std::string tempString = input.substr(startDelim + 1, endDelim - startDelim - 1);
 	
 	//set m_requestName member in HTTP_Request
@@ -74,7 +75,7 @@ void processInput(std::string& input, HTTP_Request& request)
 	request.setTimeStamp(tempString);
 
 	//set m_returnCode member in HTTP_Request
-	uint32_t val = 0;
+	std::uint32_t val = 0;
 	iss >> val;
 	request.setReturnCode(val);
 
@@ -89,11 +90,11 @@ void processInput(std::string& input, HTTP_Request& request)
 void showAccessPerHost(const std::vector<HTTP_Request>& requests)
 {
 	//collection of pairs of HTTP_Request and number of accesses to server per host
-	std::vector<std::pair<HTTP_Request, uint32_t>> requestsPerHost;
+	std::vector<std::pair<HTTP_Request, std::uint32_t>> requestsPerHost;
 
 	//running total of accesses to server per host
-	uint32_t requestAccessTotal = 0;
-	for(size_t i = 0; i < requests.size(); ++i)
+	std::uint32_t requestAccessTotal = 0;
+	for(std::size_t i = 0; i < requests.size(); ++i)
 	{
 		HTTP_Request curRequest = requests[i];
 
@@ -131,19 +132,19 @@ void showAccessPerHost(const std::vector<HTTP_Request>& requests)
 void showAccessSuccess(const std::vector<HTTP_Request>& requests)
 {
 	const std::string ACCESS_TYPE = "GET";
-	const uint32_t HTTP_OK = 200;
+	const std::uint32_t HTTP_OK = 200;
 
 	//collection of pairs of HTTP_Request and number of successful resource accesses by URI
-	std::vector<std::pair<HTTP_Request, uint32_t>> requestsPerURI;
+	std::vector<std::pair<HTTP_Request, std::uint32_t>> requestsPerURI;
 
 	//running total of successful resource accesses by URI
-	uint32_t successRequestAccessTotal = 0;
-	for(size_t i = 0; i < requests.size(); ++i)
+	std::uint32_t successRequestAccessTotal = 0;
+	for(std::size_t i = 0; i < requests.size(); ++i)
 	{
 		if(requests[i].getRequestType() == ACCESS_TYPE && requests[i].getReturnCode() == HTTP_OK)
 		{
 			++successRequestAccessTotal;
-			for(size_t j = i + 1; j < requests.size(); ++j)
+			for(std::size_t j = i + 1; j < requests.size(); ++j)
 			{
 				//compare current request with next requests in collection by request URI
 				if(requests[i].getRequestURI() == requests[j].getRequestURI()
