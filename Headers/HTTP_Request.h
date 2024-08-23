@@ -1,5 +1,4 @@
-#ifndef HTTP_REQUEST_H
-#define HTTP_REQUEST_H
+#pragma once
 
 #include <string>
 #include <cstdint>
@@ -33,5 +32,3 @@ class HTTP_Request
 		std::uint32_t m_returnCode;
 		std::uint32_t m_returnSize;
 };
-
-#endif
