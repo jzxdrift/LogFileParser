@@ -1,6 +1,3 @@
-#ifndef TEST_H
-#define TEST_H
+#pragma once
 
 void testProcessInput();
-
-#endif
